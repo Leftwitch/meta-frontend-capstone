@@ -1,4 +1,5 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { Featured } from './components/Featured'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero/Hero'
 
@@ -18,6 +19,9 @@ function App() {
     <ChakraProvider theme={theme}>
       <Header />
       <Hero />
+      <Box mt={8}>
+        <Featured />
+      </Box>
     </ChakraProvider>
   )
 }

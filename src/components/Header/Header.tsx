@@ -26,7 +26,7 @@ const MENU_ITEMS = [
 
 export const Header = () => {
 
-    return <Box width='100%' height={[100]} background='white' p={5}>
+    return <Box width='100%' height={[100]} bg='white' p={5}>
         <Grid templateColumns='1fr 5fr' h='100%'>
             <GridItem w='100%' display='flex' alignItems='center'>
                 <Image
