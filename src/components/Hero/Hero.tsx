@@ -1,4 +1,5 @@
-import { Box, Button, Heading, Text, VStack } from "@chakra-ui/react"
+import { Box, Heading, Text, VStack } from "@chakra-ui/react"
+import { ReservationButton } from "../Reservation/ReservationButton"
 
 export const Hero = () => {
     return <Box bg='secondary' w='100%' h={['40vh']}>
@@ -14,9 +15,8 @@ export const Hero = () => {
                 We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
             </Text>
 
-            <Button bg='primary' borderRadius='30' mt={4}>
-                Reserve a Table
-            </Button>
+            <Box mt={4} />
+            <ReservationButton />
         </VStack>
     </Box>
 }

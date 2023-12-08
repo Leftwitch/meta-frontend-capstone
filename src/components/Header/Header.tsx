@@ -1,4 +1,4 @@
-import { Box, Button, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
+import { Box, Button, Grid, GridItem, Heading, Image, Link } from "@chakra-ui/react";
 
 import logo from '../../assets/littlelemon_logo.png';
 import { Menu } from "./Menu";
@@ -7,21 +7,29 @@ import { MobileMenu } from "./MobileMenu";
 
 const MENU_ITEMS = [
 
-    <Button variant="link" size='lg' colorScheme='black' textDecoration='none'>
-        <Heading size='lg'>Button</Heading>
-    </Button>,
+    <Link href='/' key='home'>
+        <Button variant="link" size='lg' colorScheme='black' textDecoration='none'>
+            <Heading size='lg'>Home</Heading>
+        </Button>
+    </Link>,
 
-    <Button variant="link" size='lg' colorScheme='black' textDecoration='none'>
-        <Heading size='lg'>Button</Heading>
-    </Button>,
+    <Link href='/menu' key='menu'>
+        <Button variant="link" size='lg' colorScheme='black' textDecoration='none'>
+            <Heading size='lg'>Menu</Heading>
+        </Button>
+    </Link>,
 
-    <Button variant="link" size='lg' colorScheme='black' textDecoration='none'>
-        <Heading size='lg'>Button</Heading>
-    </Button>,
+    <Link href='/contact' key='contact'>
+        <Button variant="link" size='lg' colorScheme='black' textDecoration='none'>
+            <Heading size='lg'>Contact</Heading>
+        </Button>
+    </Link>,
 
-    <Button variant="link" size='lg' colorScheme='black' textDecoration='none'>
-        <Heading size='lg'>Button</Heading>
-    </Button>
+    <Link href='/gallery' key='gallery'>
+        <Button variant="link" size='lg' colorScheme='black' textDecoration='none'>
+            <Heading size='lg'>Gallery</Heading>
+        </Button>
+    </Link>,
 ]
 
 export const Header = () => {
@@ -29,11 +37,13 @@ export const Header = () => {
     return <Box width='100%' height={[100]} bg='white' px={10}>
         <Grid templateColumns='1fr 5fr' h='100%'>
             <GridItem w='100%' display='flex' alignItems='center'>
-                <Image
-                    src={logo}
-                    alt="logo"
-                    objectFit='cover'
-                    boxSize={[50]} />
+                <Link href="/">
+                    <Image
+                        src={logo}
+                        alt="logo"
+                        objectFit='cover'
+                        boxSize={[50]} />
+                </Link>
             </GridItem>
             <GridItem display='flex' alignItems='center' justifyContent='flex-end'>
                 <Menu>

@@ -1,9 +1,10 @@
-import { Box, ChakraProvider, Divider, extendTheme } from '@chakra-ui/react'
-import { Featured } from './components/Featured'
+import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header'
-import { Hero } from './components/Hero/Hero'
-import { Reviews } from './components/Review'
+import { HomePage } from './pages/HomePage'
+import { PlaceholderPage } from './pages/PlaceholderPage'
 
 const theme = extendTheme({
   colors: {
@@ -15,21 +16,40 @@ const theme = extendTheme({
     body: 'Markazi Text',
   }
 })
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomePage />
+  },
+  {
+    path: '/menu',
+    element: <PlaceholderPage />
+  },
+  {
+    path: '/contact',
+    element: <PlaceholderPage />
+  },
+  {
+    path: '/gallery',
+    element: <PlaceholderPage />
+  },
+]);
+
+const queryClient = new QueryClient();
+
 function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <Header />
-      <Hero />
-      <main>
-        <Box mt={8} />
-        <Featured />
-        <Divider my={16} />
-        <Box mt={8} />
-        <Reviews />
-      </main>
-      <Box mt={32} />
-      <Footer />
+      <QueryClientProvider client={queryClient}>
+        <Header />
+        <Box minH='100vh'>
+          <RouterProvider router={router} />
+        </Box>
+        <Footer />
+      </QueryClientProvider>
+
     </ChakraProvider>
   )
 }
