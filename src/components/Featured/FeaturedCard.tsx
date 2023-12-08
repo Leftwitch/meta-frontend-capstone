@@ -1,7 +1,10 @@
 import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from "@chakra-ui/react"
+import { motion } from "framer-motion"
 
 export const FeaturedCard = () => {
-    return <Card className="featured-card" opacity={0}>
+    return <Card className="featured-card" as={motion.div} initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+
+    >
         <CardBody>
             <Image
                 src='https://images.squarespace-cdn.com/content/v1/57879a6cbebafb879f256735/1579721909133-R2KSZ8VGDGBI90DYATBK/header4.jpg'

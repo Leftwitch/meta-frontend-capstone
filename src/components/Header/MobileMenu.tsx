@@ -34,7 +34,6 @@ export const MobileMenu = ({ children }: { children: ReactNode }) => {
                     <VStack
                         divider={<StackDivider borderColor='gray.200' />}
                         spacing={4}
-                        align='stretch'
                         justify='center'
                         h='100%'
                     >

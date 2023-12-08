@@ -1,7 +1,9 @@
-import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { Box, ChakraProvider, Divider, extendTheme } from '@chakra-ui/react'
 import { Featured } from './components/Featured'
+import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero/Hero'
+import { Reviews } from './components/Review'
 
 const theme = extendTheme({
   colors: {
@@ -19,9 +21,15 @@ function App() {
     <ChakraProvider theme={theme}>
       <Header />
       <Hero />
-      <Box mt={8}>
+      <main>
+        <Box mt={8} />
         <Featured />
-      </Box>
+        <Divider my={16} />
+        <Box mt={8} />
+        <Reviews />
+      </main>
+      <Box mt={32} />
+      <Footer />
     </ChakraProvider>
   )
 }
